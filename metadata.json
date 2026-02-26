@@ -1,0 +1,5 @@
+{
+  "name": "年会幸运抽奖系统",
+  "description": "一个支持导入名单、动画抽奖、去重、导出结果的年会抽奖系统。",
+  "requestFramePermissions": []
+}
