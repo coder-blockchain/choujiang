@@ -1,20 +1,42 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img width="120" height="120" src="https://lucide.dev/icons/gift.svg" alt="Gift Logo" />
+
+# 年会幸运抽奖系统
+纯前端打造的精美味网页抽奖组件
+
 </div>
 
-# Run and deploy your AI Studio app
+这是一个基于 React 19 + Vite 6 + Tailwind CSS v4 构建的现代感年会抽奖系统。系统全在浏览器本地端运行，支持导入名单、动画抽取并支持结果 CSV 导出。
 
-This contains everything you need to run your app locally.
+## 🎯 核心功能
+1. **灵活的设置模式**：支持手动录入和 TXT/CSV 批量导入名单，支持重复参与去重检测，支持重复中奖规则设置。
+2. **精美的抽取动画**：悬念滚动效果，中奖后撒花庆祝 (Canvas Confetti)，响应式流体设计。
+3. **一键结果导出**：直观的结果面板，一键将所有中奖人导出为防止乱码的完美 `.csv` 表格。
 
-View your app in AI Studio: https://ai.studio/apps/73469e30-7efe-4fe7-9371-40794a37593f
+## 🚀 本地运行
 
-## Run Locally
+**先决条件:** Node.js
 
-**Prerequisites:**  Node.js
+1. 安装项目依赖：
+   ```bash
+   npm install
+   ```
+2. 启动本地开发服务器：
+   ```bash
+   npm run dev
+   ```
+   你可以接着访问 `http://localhost:3000` 预览应用。
 
+## 📦 项目部署
+目前项目已配置好 GitHub Actions Workflow (`.github/workflows/deploy.yml`)，当推送到 `main` 分支时，系统会自动执行打包和上线部署环节。
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+只需 **两步** 即可部署上线：
+1. 前往你要部署 Repository 的 GitHub 设置页 (Settings -> Pages)
+2. 在 **Build and deployment** 下拉菜单，将 Source 选为 `GitHub Actions`。 
+此后每次 Push，系统将自动使用 `npm run build` 打包发布到您的 GitHub Pages 上。
+
+## 📂 项目结构
+主要功能代码位列于 `src/components/`：
+- `Setup.tsx`: 抽奖参数及名单设定
+- `Draw.tsx`: 核心中奖池滚动及抽取逻辑展示
+- `Results.tsx`: 汇总并导出结果表格的视图
